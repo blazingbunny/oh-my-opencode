@@ -3,4 +3,19 @@
   "$id": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
   "title": "Oh My OpenCode Configuration",
   "description": "Configuration schema for oh-my-opencode plugin"
+  
+  // Override specific agent models
+  "agents": {
+    "oracle": { "model": "openai/gpt-5.2" }, // Use GPT for debugging
+    "librarian": { "model": "zai-coding-plan/glm-4.7" }, // Cheap model for research
+    "explore": { "model": "opencode/gpt-5-nano" } // Free model for grep
+  },
+  
+  // Override category models (used by task)
+  "categories": {
+    "quick": { "model": "opencode/gpt-5-nano" }, // Fast/cheap for trivial tasks
+    "unspecified-low": { "model": "opencode/gpt-5-nano" },
+    "unspecified-high": { "model": "openai/gpt-4.5" },
+    ...
+  }
 }
